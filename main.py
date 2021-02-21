@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', data=data)
+    return render_template('index.html', data={})
 
 # rock -> 0
 # scissors -> 1
@@ -29,5 +29,3 @@ def game():
     server_move = random.randint(0, 3)
     result = winner(move, server_move)
     return render_template('game.html', move=move, server_move=server_move, result=result)
-
-app.run('0.0.0.0', port=8000)
